@@ -18,7 +18,9 @@ import Image from "next/image";
 
 // importing assets
 import projectGTXR from "../../public/assets/projects/GTXR.png";
-// import projectCameraRestoration from "../../public/assets/projects/CameraRestoration.jpg";
+import projectCameraRestoration from "../../public/assets/projects/Camera.png";
+import projectMriSuperResolution from "../../public/assets/projects/MRI.png";
+import projectDiagnosisPrediction from "../../public/assets/projects/Symptom.png";
 // import projectPacManAI from "../../public/assets/projects/PacManAI.jpg";
 // import projectAtlantaFoodFinder from "../../public/assets/projects/AtlantaFoodFinder.jpg";
 import WorkSliderButtons from "@/components/WorkSliderButtons";
@@ -27,6 +29,22 @@ import WorkSliderButtons from "@/components/WorkSliderButtons";
 const projectList = [
   {
     num: "01",
+    category: "Artificial Intelligence",
+    title: "AI-Driven Efficient MRI Super-Resolution",
+    Description:
+      "Leveraged advanced AI techniques to enhance MRI image quality, reduce scanning times, and lower costs. Developed a machine learning model to upscale MRI scans from 1.5T to 3T, improving diagnostic accuracy and accessibility in healthcare. Optimized backend infrastructure for efficient image processing and integrated a user-friendly interface to streamline medical imaging workflows.",
+    stack: [
+      { name: "Python" },
+      { name: "PyTorch Lightning" },
+      { name: "Matplotlib" },
+      { name: "Contrastive Unpaired Translation" },
+    ],
+    image: projectMriSuperResolution,
+    live: "https://www.youtube.com/watch?v=W0isckv7zg4",
+    github: "https://github.com/venkat1596/Hacklytics_Hackathon?tab=readme-ov-file",
+},
+  {
+    num: "02",
     category: "Robotics",
     title: "Georgia Tech Experimental Rocketry Kalman Filter (GTXR)",
     Description:
@@ -36,23 +54,42 @@ const projectList = [
     live: "#",
     github: "#",
   },
-  // {
-  //   num: "02",
-  //   category: "Computer Engineering",
-  //   title: "Studio Camera Restoration",
-  //   Description:
-  //     "Diagnosed and repaired hardware issues, including PCB damage, to fully restore a malfunctioning Fujifilm XS-10 studio camera. Utilized Embedded C programming and real-time operating systems in developing custom firmware to implement computer vision solutions using OpenCV, resulting in a 20% enhancement in accuracy and restoration of studio-grade functionality for camera sensors and focus algorithm.",
-  //   stack: [
-  //     { name: "C++" },
-  //     { name: "Python" },
-  //     { name: "OpenCV" },
-  //     { name: "SolidWorks" },
-  //     { name: "Autodesk" },
-  //   ],
-  //   image: projectCameraRestoration,
-  //   live: "#",
-  //   github: "#",
-  // },
+  
+  {
+    num: "03",
+    category: "Computer Engineering",
+    title: "Studio Camera Restoration",
+    Description:
+      "Diagnosed and repaired hardware issues, including PCB damage, to fully restore a malfunctioning Fujifilm XS-10 studio camera. Utilized Embedded C programming and real-time operating systems in developing custom firmware to implement computer vision solutions using OpenCV, resulting in a 20% enhancement in accuracy and restoration of studio-grade functionality for camera sensors and focus algorithm.",
+    stack: [
+      { name: "C++" },
+      { name: "Python" },
+      { name: "OpenCV" },
+      { name: "SolidWorks" },
+      { name: "Autodesk" },
+    ],
+    image: projectCameraRestoration,
+    live: "#",
+    github: "#",
+  },
+  {
+    num: "04",
+    category: "Machine Learning",
+    title: "Diagnosis Prediction Based on Symptoms",
+    Description:
+      "Developed a machine learning-based medical diagnosis system to predict diseases based on symptoms, patient demographics, and medical history. Utilized advanced data preprocessing techniques, feature engineering, and ML models like Random Forest, SVM, and Neural Networks to enhance predictive accuracy and aid healthcare professionals in clinical decision-making.",
+    stack: [
+      { name: "Python" },
+      { name: "Scikit-learn" },
+      { name: "TensorFlow" },
+      { name: "SMOTE" },
+      { name: "PCA" },
+    ],
+    image: projectDiagnosisPrediction,
+    live: "#",
+    github: "#",
+},
+
   // {
   //   num: "03",
   //   category: "Artificial Intelligence",
