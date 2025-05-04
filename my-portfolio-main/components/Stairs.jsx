@@ -17,7 +17,7 @@ const stairAnimation = {
 const Stairs = () => {
   // clalc rev index
   const reverseIndex = (index) => {
-    const totalsteps = 6;
+    const totalsteps = 1;
     return totalsteps - index;
   };
 
