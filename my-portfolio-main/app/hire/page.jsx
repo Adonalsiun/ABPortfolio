@@ -1,7 +1,7 @@
-'use client'
+'use client';
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Mail } from "lucide-react";
+import { ArrowRight, Mail, Linkedin } from "lucide-react"; // Added Linkedin import
 import Link from "next/link";
 
 const HireMePage = () => {
@@ -12,12 +12,12 @@ const HireMePage = () => {
         <div className="mb-12">
           <span className="text-xl text-accent">Opportunities</span>
           <h1 className="h1 mt-4 mb-6">
-            Let's Build <span className="text-accent">Something</span> Great
+            Let&apos;s Build <span className="text-accent">Something</span> Great
           </h1>
           <p className="text-lg text-white/80 max-w-2xl mx-auto">
-            I'm actively seeking software engineering roles and collaborations
-            at the intersection of robotics and AI. If you're looking for a
-            passionate developer, let's connect!
+            I&apos;m actively seeking software engineering roles and collaborations
+            at the intersection of robotics and AI. If you&apos;re looking for a
+            passionate developer, let&apos;s connect!
           </p>
         </div>
 
@@ -45,7 +45,7 @@ const HireMePage = () => {
 
           <div className="border border-white/10 rounded-2xl p-8 hover:bg-white/5 transition-all">
             <div className="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center mb-6 mx-auto">
-              <LinkedinIcon className="text-accent" size={24} />
+              <Linkedin className="text-accent" size={24} /> {/* Replaced custom icon with Lucide's */}
             </div>
             <h3 className="h3 mb-3">LinkedIn</h3>
             <p className="text-white/60 mb-6">
@@ -79,19 +79,5 @@ const HireMePage = () => {
     </section>
   );
 };
-
-// Simple LinkedIn icon component since we're not importing the entire library
-const LinkedinIcon = ({ size = 24, className = "" }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="currentColor"
-    className={className}
-  >
-    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-  </svg>
-);
 
 export default HireMePage;
