@@ -1,244 +1,175 @@
 "use client";
 
-// Imports
-import { motion } from "framer-motion";
-import React, { useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import { BsArrowUpRight, BsGithub } from "react-icons/bs";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-
+import { ArrowUpRight, Github, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
-// importing assets
-import projectGTXR from "../../public/assets/projects/GTXR.png";
-import projectCameraRestoration from "../../public/assets/projects/Camera.png";
-import projectMriSuperResolution from "../../public/assets/projects/MRI.png";
-import projectDiagnosisPrediction from "../../public/assets/projects/Symptom.png";
-// import projectPacManAI from "../../public/assets/projects/PacManAI.jpg";
-// import projectAtlantaFoodFinder from "../../public/assets/projects/AtlantaFoodFinder.jpg";
-import WorkSliderButtons from "@/components/WorkSliderButtons";
-
-// Object Array
-const projectList = [
-  {
-    num: "01",
-    category: "Artificial Intelligence",
-    title: "AI-Driven Efficient MRI Super-Resolution",
-    Description:
-      "Leveraged advanced AI techniques to enhance MRI image quality, reduce scanning times, and lower costs. Developed a machine learning model to upscale MRI scans from 1.5T to 3T, improving diagnostic accuracy and accessibility in healthcare. Optimized backend infrastructure for efficient image processing and integrated a user-friendly interface to streamline medical imaging workflows.",
-    stack: [
-      { name: "Python" },
-      { name: "PyTorch Lightning" },
-      { name: "Matplotlib" },
-      { name: "Contrastive Unpaired Translation" },
-    ],
-    image: projectMriSuperResolution,
-    live: "https://www.youtube.com/watch?v=W0isckv7zg4",
-    github: "https://github.com/venkat1596/Hacklytics_Hackathon?tab=readme-ov-file",
-},
-  {
-    num: "02",
-    category: "Robotics",
-    title: "Georgia Tech Experimental Rocketry Kalman Filter (GTXR)",
-    Description:
-      "Implemented multivariate Kalman Filter in C for state estimation in GTXR flight computer, integrating a complementary filter for acceleration and angular velocity resulting in decreased estimation errors. Created Java matrix operations library to enhance understanding of Kalman Filter mathematics, with data handling in both Euler angle and quaternion formats.",
-    stack: [{ name: "Java" }, { name: "C" }, { name: "MATLAB" }],
-    image: projectGTXR,
-    live: "#",
-    github: "#",
-  },
-  
-  {
-    num: "03",
-    category: "Computer Engineering",
-    title: "Studio Camera Restoration",
-    Description:
-      "Diagnosed and repaired hardware issues, including PCB damage, to fully restore a malfunctioning Fujifilm XS-10 studio camera. Utilized Embedded C programming and real-time operating systems in developing custom firmware to implement computer vision solutions using OpenCV, resulting in a 20% enhancement in accuracy and restoration of studio-grade functionality for camera sensors and focus algorithm.",
-    stack: [
-      { name: "C++" },
-      { name: "Python" },
-      { name: "OpenCV" },
-      { name: "SolidWorks" },
-      { name: "Autodesk" },
-    ],
-    image: projectCameraRestoration,
-    live: "#",
-    github: "#",
-  },
-  {
-    num: "04",
-    category: "Machine Learning",
-    title: "Diagnosis Prediction Based on Symptoms",
-    Description:
-      "Developed a machine learning-based medical diagnosis system to predict diseases based on symptoms, patient demographics, and medical history. Utilized advanced data preprocessing techniques, feature engineering, and ML models like Random Forest, SVM, and Neural Networks to enhance predictive accuracy and aid healthcare professionals in clinical decision-making.",
-    stack: [
-      { name: "Python" },
-      { name: "Scikit-learn" },
-      { name: "TensorFlow" },
-      { name: "SMOTE" },
-      { name: "PCA" },
-    ],
-    image: projectDiagnosisPrediction,
-    live: "#",
-    github: "#",
-},
-
-  // {
-  //   num: "03",
-  //   category: "Artificial Intelligence",
-  //   title: "Pac-Man AI Development",
-  //   Description:
-  //     "Spearheaded development of intelligent Pac-Man agents using reinforcement learning and A* algorithms, demonstrating advanced AI implementation in gaming environments. Built end-to-end visualization platform with Flask and SciKit Learn, showcasing full-stack development capabilities and machine learning expertise through real-time AI performance analysis.",
-  //   stack: [
-  //     { name: "Python" },
-  //     { name: "Java" },
-  //     { name: "Flask" },
-  //     { name: "SciKit Learn" },
-  //   ],
-  //   image: projectPacManAI,
-  //   live: "#",
-  //   github: "#",
-  // },
-  // {
-  //   num: "04",
-  //   category: "Web Development",
-  //   title: "Atlanta Food Finder",
-  //   Description:
-  //     "Engineered a restaurant discovery platform integrating geolocation services, interactive mapping features, and conversational chatbot, enabling users to search and visualize dining options across Atlanta. Led end-to-end development through complete project lifecycle, implementing data parsing from external APIs and maintaining database operations while following Agile practices and daily team collaborations.",
-  //   stack: [
-  //     { name: "Python" },
-  //     { name: "Django" },
-  //     { name: "SQL" },
-  //     { name: "JavaScript" },
-  //     { name: "HTML/CSS" },
-  //   ],
-  //   image: projectAtlantaFoodFinder,
-  //   live: "#",
-  //   github: "#",
-  // },
+const projects = [
+  // Your existing projects...
 ];
 
-const Projects = () => {
-  const [project, setProject] = useState(projectList[0]);
-
-  const handleSlideChange = (swiper) => {
-    const currentIndex = swiper.activeIndex;
-    setProject(projectList[currentIndex]);
-  };
+const ProjectsPage = () => {
+  const [visibleProjects, setVisibleProjects] = useState(4); // Start with 4 visible
+  const categories = ["All", "AI", "Robotics", "Web"]; // Add your categories
 
   return (
-    <motion.section
-      initial={{ opacity: 0 }}
-      animate={{
-        opacity: 1,
-        transition: {
-          delay: 2.4,
-          duration: 0.4,
-          ease: "easeIn",
-        },
-      }}
-      className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0"
-    >
-      <div className="container mx-auto">
-        <div className="flex flex-col xl:flex-row xl:gap-[30px]">
-          <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
-            <div className="flex flex-col gap-[30px] h-[50%]">
-              {/* outline num */}
-              <div className="text-8xl leading-none font-extrabold text-outline">
-                {project.num}
-              </div>
-              {/* project category */}
-              <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
-                {project.category} project
-              </h2>
-              {/* project description */}
-              <p className="text-white/60">{project.Description}</p>
-              {/* stack */}
-              <ul className="flex gap-4">
-                {project.stack.map((item, index) => (
-                  <li key={index} className="text-accent text-xl ">
-                    {item.name}
-                    {index !== project.stack.length - 1 && ","}
-                  </li>
-                ))}
-              </ul>
-              {/* border */}
-              <div className="border border-white/20"></div>
-              {/* buttons */}
-              <div className="flex items-center gap-4">
-                {/* live link button */}
-                <Link href={project.live}>
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                        <BsArrowUpRight className="text-white text-3xl group-hover:text-accent" />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Live project</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
+    <section className="py-12 md:py-20">
+      <div className="container mx-auto px-4">
+        {/* Header with filtering */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
+          <div>
+            <span className="text-accent text-lg">Portfolio</span>
+            <h1 className="h1 mt-2 mb-4">Project Showcase</h1>
+            <p className="text-white/80 max-w-2xl">
+              Explore my technical work across AI, robotics, and software engineering
+            </p>
+          </div>
+          
+          <div className="flex flex-wrap gap-2">
+            {categories.map((category) => (
+              <Button
+                key={category}
+                variant="outline"
+                className="rounded-full hover:bg-accent hover:text-primary"
+                size="sm"
+              >
+                {category}
+              </Button>
+            ))}
+          </div>
+        </div>
 
-                {/* github link button */}
-                <Link href={project.github}>
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                        <BsGithub className="text-white text-3xl group-hover:text-accent" />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Github Repository</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
+        {/* Projects Grid - Card Style */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+          {projects.slice(0, visibleProjects).map((project) => (
+            <div
+              key={project.num}
+              className="border border-white/10 rounded-xl overflow-hidden hover:border-accent/30 transition-all duration-300 group"
+            >
+              <div className="relative h-48 w-full">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="rounded-full gap-x-2 hover:bg-accent hover:text-primary"
+                  >
+                    <Link href={`/projects/${project.num}`}> {/* Add detail pages later */}
+                      View Project
+                      <ChevronRight className="h-4 w-4" />
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+              
+              <div className="p-6">
+                <div className="flex justify-between items-start mb-2">
+                  <span className="text-accent text-sm font-medium">
+                    {project.category}
+                  </span>
+                  <span className="text-white/50 text-xs">#{project.num}</span>
+                </div>
+                
+                <h3 className="text-xl font-semibold mb-3">{project.title}</h3>
+                
+                <p className="text-white/70 text-sm mb-4 line-clamp-2">
+                  {project.description}
+                </p>
+                
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.stack.slice(0, 3).map((tech) => (
+                    <span
+                      key={tech.name}
+                      className="px-2 py-1 bg-white/5 rounded-full text-xs text-white/80"
+                    >
+                      {tech.name}
+                    </span>
+                  ))}
+                  {project.stack.length > 3 && (
+                    <span className="px-2 py-1 bg-white/5 rounded-full text-xs text-white/50">
+                      +{project.stack.length - 3}
+                    </span>
+                  )}
+                </div>
+                
+                <div className="flex gap-3">
+                  {project.live !== "#" && (
+                    <Button
+                      asChild
+                      variant="ghost"
+                      size="sm"
+                      className="gap-x-1 text-xs px-3"
+                    >
+                      <Link href={project.live} target="_blank">
+                        <ArrowUpRight className="h-3 w-3" />
+                        Demo
+                      </Link>
+                    </Button>
+                  )}
+                  {project.github !== "#" && (
+                    <Button
+                      asChild
+                      variant="ghost"
+                      size="sm"
+                      className="gap-x-1 text-xs px-3"
+                    >
+                      <Link href={project.github} target="_blank">
+                        <Github className="h-3 w-3" />
+                        Code
+                      </Link>
+                    </Button>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-          <div className="w-full xl:w-[50%]">
-            <Swiper
-              spaceBetween={30}
-              slidesPerView={1}
-              className="xl:h-[520px]"
-              onSlideChange={handleSlideChange}
+          ))}
+        </div>
+
+        {/* Load More Button */}
+        {visibleProjects < projects.length && (
+          <div className="text-center">
+            <Button
+              onClick={() => setVisibleProjects(prev => prev + 4)}
+              variant="outline"
+              className="rounded-full hover:bg-accent hover:text-primary"
             >
-              {projectList.map((project, index) => (
-                <SwiperSlide key={index} className="w-full">
-                  <div className="h-[470px] relative group flex justify-center items-center bg-pink-50/20">
-                    {/* overlay */}
-                    <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10 "></div>
-                    {/* image */}
-                    <div className="relative w-full h-full">
-                      <Image
-                        src={project.image}
-                        fill
-                        className="object-cover"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                </SwiperSlide>
-              ))}
-              {/* slider buttons */}
-              <WorkSliderButtons
-                containerStyles="flex gap-2 absolute right-0 bottom-[calc (50%_ - _22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max
-                xl:justify-none"
-                btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all"
-              />
-            </Swiper>
+              Load More Projects
+            </Button>
+          </div>
+        )}
+
+        {/* Stats Bar */}
+        <div className="mt-16 p-6 bg-white/5 rounded-xl border border-white/10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+            <div>
+              <div className="text-3xl font-bold text-accent">{projects.length}+</div>
+              <div className="text-white/70 text-sm">Projects Completed</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-accent">5+</div>
+              <div className="text-white/70 text-sm">Technologies</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-accent">3+</div>
+              <div className="text-white/70 text-sm">Categories</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-accent">100%</div>
+              <div className="text-white/70 text-sm">Passion</div>
+            </div>
           </div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 
-export default Projects;
+export default ProjectsPage;
