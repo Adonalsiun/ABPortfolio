@@ -7,7 +7,77 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
 const projects = [
-  // Your existing projects...
+  {
+    num: "01",
+    category: "Artificial Intelligence",
+    title: "Mir.AI – AI Powered MRI Enhancement",
+    description: "Developed an AI model leveraging Generative Adversarial Networks to enhance 1.5T MRI scans to 3T scans and up, improving accessibility while reducing costs. Engineered a fast and efficient image processing pipeline with FastAPI, achieving up to 50 epochs in an hour for training models. Applied insights from Cycle-Free CycleGAN using invertible generators to refine unsupervised image enhancements.",
+    stack: [
+      { name: "Python" },
+      { name: "TensorFlow" },
+      { name: "PyTorch Lightning" },
+      { name: "GANs" },
+      { name: "FastAPI" },
+      { name: "React" }
+    ],
+    image: "/assets/projects/MRI.png",
+    timeframe: "Feb 2025 - Present",
+    achievement: "Hackalytics 2025 Healthcare Track Winner",
+    live: "#",
+    github: "#"
+  },
+  {
+    num: "02",
+    category: "Robotics",
+    title: "GTXR Kalman Filter Implementation",
+    description: "Implemented multivariate Kalman Filter in C for state estimation in GTXR flight computer, integrating a complementary filter for acceleration and angular velocity resulting in decreased estimation errors. Created Java matrix operations library to enhance understanding of Kalman Filter mathematics, with data handling in both Euler angle and quaternion formats.",
+    stack: [
+      { name: "Java" },
+      { name: "C" },
+      { name: "MATLAB" }
+    ],
+    image: "/assets/projects/gtxr.png",
+    timeframe: "Aug 2024 - Dec 2024",
+    achievement: "Applications of Robotics",
+    live: "#",
+    github: "#"
+  },
+  {
+    num: "03",
+    category: "Computer Engineering",
+    title: "Studio Camera Restoration",
+    description: "Diagnosed and repaired hardware issues, including PCB damage, to fully restore a malfunctioning Fujifilm XS-10 studio camera. Utilized Embedded C programming and real-time operating systems to develop custom firmware implementing computer vision solutions using OpenCV, resulting in a 20% enhancement in accuracy and restoration of studio-grade functionality.",
+    stack: [
+      { name: "C++" },
+      { name: "Python" },
+      { name: "OpenCV" },
+      { name: "SolidWorks" },
+      { name: "Autodesk" },
+      { name: "Embedded C" }
+    ],
+    image: "/assets/projects/camera.png",
+    timeframe: "Aug 2024 - Dec 2024",
+    achievement: "Applications of Computer Engineering",
+    live: "#",
+    github: "#"
+  },
+  {
+    num: "04",
+    category: "Artificial Intelligence",
+    title: "AI-Driven MRI Super-Resolution",
+    description: "Leveraged advanced AI techniques to enhance MRI image quality, reduce scanning times, and lower costs. Developed a machine learning model to upscale MRI scans from 1.5T to 3T, improving diagnostic accuracy and accessibility in healthcare.",
+    stack: [
+      { name: "Python" },
+      { name: "PyTorch Lightning" },
+      { name: "Matplotlib" },
+      { name: "Contrastive Unpaired Translation" }
+    ],
+    image: "/assets/projects/mri-superres.jpg",
+    timeframe: "Jan 2025 - Mar 2025",
+    achievement: "Hacklytics 2025 Finalist",
+    live: "https://www.youtube.com/watch?v=W0isckv7zg4",
+    github: "https://github.com/venkat1596/Hacklytics_Hackathon"
+  }
 ];
 
 const ProjectsPage = () => {
