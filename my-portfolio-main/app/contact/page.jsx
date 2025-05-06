@@ -18,8 +18,8 @@ import PageTransition from "@/components/PageTransition";
 const info = [
   {
     icon: <FaPhoneAlt />,
-    title: "Phone",
-    value: "+1 (404)-276-7812",
+    title: "College",
+    value: "Georgia Institute of Technology",
   },
   {
     icon: <FaEnvelope />,

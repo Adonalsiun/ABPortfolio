@@ -49,8 +49,8 @@ const about = {
       fieldValue: "www.linkedin.com/in/arynbht",
     },
     {
-      fieldName: "Phone",
-      fieldValue: "(404)-276-7812",
+      fieldName: "College",
+      fieldValue: "Georgia Institute of Technology",
     },
     {
       fieldName: "Email",
