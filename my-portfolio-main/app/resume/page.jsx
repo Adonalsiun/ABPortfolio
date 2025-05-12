@@ -67,7 +67,7 @@ const about = {
   ],
 };
 
-const programming = [
+const publications = [
   {
     fieldName: "Devpost",
     fieldValue: "https://devpost.com/arynbht",
@@ -188,7 +188,7 @@ const Resume = () => {
         <div className="container mx-auto">
           <Tabs defaultValue="about" className="flex flex-col xl:flex-row gap-[60px]">
             <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
-              {["skills", "education", "certificates", "programming", "about"].map((tab, i) => (
+              {["skills", "education", "certificates", "publications", "about"].map((tab, i) => (
                 <motion.div
                   key={tab}
                   custom={i}
@@ -300,20 +300,20 @@ const Resume = () => {
               </TabsContent>
 
               {/* cp */}
-              <TabsContent value="programming" className="w-full">
+              <TabsContent value="publications" className="w-full">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
                 >
                   <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                    <h3 className="text-4xl font-bold">Competitive Programming</h3>
+                    <h3 className="text-4xl font-bold">Publications</h3>
                     <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
-                      Here are my profiles on various competitive programming
+                      Here are my profiles on various media
                       platforms.
                     </p>
                     <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 mx-auto xl:mx-0">
-                      {programming.map((item, index) => (
+                      {publications.map((item, index) => (
                         <motion.li
                           key={index}
                           initial={{ opacity: 0, y: 20 }}
