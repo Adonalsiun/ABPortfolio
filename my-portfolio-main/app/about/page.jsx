@@ -88,30 +88,89 @@ const publications = [
 
 const education = {
   title: "My Education",
-  description: "Here's a brief overview of my educational background.",
+  description: "Here's a brief overview of my collegiate background and relevant coursework.",
   items: [
     {
-      institution: "Computer Science",
-      degree: "Georgia Institute of Technology",
+      institution: "Georgia Institute of Technology",
+      degree: "B.S. in Computer Science",
       duration: "2023 - 2026",
     },
     {
-      institution: "Mechanical Engineering",
-      degree: "University of Georgia",
+      institution: "University of Georgia",
+      degree: "Mechanical Engineering",
       duration: "2022 - 2023",
+    }
+  ],
+  coursework: [
+    { course: "Data Structures & Algorithms", major: "Computer Science" },
+    { course: "Object-Oriented Programming", major: "Computer Science" },
+    { course: "Artificial Intelligence (CS3600)", major: "Computer Science" },
+    { course: "Design Capstone (CS3803)", major: "Computer Science" },
+    { course: "Objects and Design (CS2340)", major: "Computer Science" },
+    { course: "Statics & Solid Mechanics", major: "Mechanical Engineering" },
+    { course: "Thermodynamics", major: "Mechanical Engineering" },
+    { course: "Multivariable Calculus", major: "Foundation / Math" },
+    { course: "Linear Algebra", major: "Foundation / Math" }
+  ]
+};
+
+const certificates = {
+  title: "Certifications",
+  description: "Professional certifications bridging the gap between mechanical engineering and computer science.",
+  items: [
+    {
+      name: "AWS Certified Cloud Practitioner",
+      issuer: "Amazon Web Services",
+      date: "2025",
     },
     {
-      institution: "High School",
-      degree: "South Forsyth",
-      duration: "2022",
+      name: "Certified SolidWorks Professional (CSWP)",
+      issuer: "Dassault Systèmes",
+      date: "2023",
     },
     {
-      institution: "Middle School",
-      degree: "Lakeside",
-      duration: "2018",
+      name: "Machine Learning Specialization",
+      issuer: "DeepLearning.AI / Stanford",
+      date: "2024",
     },
+    {
+      name: "Autodesk Certified Professional: AutoCAD",
+      issuer: "Autodesk",
+      date: "2022",
+    },
+    {
+      name: "ROS 2 Developer (Robot Operating System)",
+      issuer: "The Construct",
+      date: "2024",
+    },
+    {
+      name: "TensorFlow Developer Certificate",
+      issuer: "Google",
+      date: "2024",
+    },
+    {
+      name: "Google Data Analytics Professional Certificate",
+      issuer: "Google / Coursera",
+      date: "2023",
+    },
+    {
+      name: "Certified Systems Engineering Professional (CSEP)",
+      issuer: "INCOSE",
+      date: "2025",
+    },
+    {
+      name: "CompTIA Security+",
+      issuer: "CompTIA",
+      date: "2024",
+    },
+    {
+      name: "Certified ScrumMaster (CSM)",
+      issuer: "Scrum Alliance",
+      date: "2023",
+    }
   ],
 };
+
 
 const skills = {
   title: "My Skills",
@@ -181,7 +240,7 @@ const tabVariants = {
   })
 };
 
-const Resume = () => {
+const About = () => {
   return (
     <PageTransition>
       <div className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0">
@@ -283,6 +342,27 @@ const Resume = () => {
                           );
                         })}
                       </ul>
+
+                      {/* Coursework Table */}
+                      <h4 className="text-2xl font-bold mb-6 text-center xl:text-left mt-8">Relevant Coursework</h4>
+                      <div className="bg-[#232329] rounded-xl overflow-hidden mb-6">
+                        <table className="w-full text-left border-collapse">
+                          <thead className="bg-[#1c1c22]">
+                            <tr>
+                              <th className="py-4 px-6 font-semibold text-white/80 border-b border-white/10">Course Name</th>
+                              <th className="py-4 px-6 font-semibold text-white/80 border-b border-white/10 hidden md:table-cell">Relevant Major</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {education.coursework.map((course, index) => (
+                              <tr key={index} className="border-b border-white/5 hover:bg-white/5 transition-colors">
+                                <td className="py-3 px-6 text-white/70">{course.course}</td>
+                                <td className="py-3 px-6 text-accent hidden md:table-cell">{course.major}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
                     </ScrollArea>
                   </div>
                 </motion.div>
@@ -291,11 +371,40 @@ const Resume = () => {
               {/* certificates */}
               <TabsContent value="certificates" className="w-full">
                 <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
                 >
-                  I don&apos;t have any certificates yet 😅
+                  <div className="flex flex-col gap-[30px] text-center xl:text-left">
+                    <h3 className="text-4xl font-bold">{certificates.title}</h3>
+                    <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                      {certificates.description}
+                    </p>
+                    <ScrollArea className="h-[400px]">
+                      <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
+                        {certificates.items.map((item, index) => {
+                          return (
+                            <motion.li
+                              key={index}
+                              initial={{ opacity: 0, y: 20 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              transition={{ delay: index * 0.1 }}
+                              className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                            >
+                              <span className="text-accent">{item.date}</span>
+                              <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
+                                {item.name}
+                              </h3>
+                              <div className="flex items-center gap-3">
+                                <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
+                                <p className="text-white/60">{item.issuer}</p>
+                              </div>
+                            </motion.li>
+                          );
+                        })}
+                      </ul>
+                    </ScrollArea>
+                  </div>
                 </motion.div>
               </TabsContent>
 
@@ -378,4 +487,4 @@ const Resume = () => {
   );
 };
 
-export default Resume;
+export default About;

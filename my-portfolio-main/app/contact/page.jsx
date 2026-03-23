@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -34,6 +35,39 @@ const info = [
 ];
 
 const Contact = () => {
+  const [result, setResult] = useState("");
+  const [projectType, setProjectType] = useState("");
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+
+    // Append the access key for Web3Forms
+    formData.append("access_key", "83851888-4904-4191-b1a5-90869046bfcd");
+    
+    // Append the custom Select component value
+    if (projectType) {
+      formData.append("project_type", projectType);
+    }
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Message sent successfully!");
+      event.target.reset();
+      setProjectType(""); // Reset the select state
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
+  };
+
   return (
     <PageTransition>
       <section className="py-6">
@@ -41,36 +75,47 @@ const Contact = () => {
           <div className="flex flex-col xl:flex-row gap-[30px]">
             {/* form */}
             <div className="xl:w-[54%] order-2 xl:order-none">
-              <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl">
+              <form onSubmit={onSubmit} className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl relative">
                 <h3 className="text-4xl text-accent">Let&apos;s work together!</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <Input type="firstname" placeholder="Firstname" />
-                  <Input type="lastname" placeholder="Lastname" />
-                  <Input type="email" placeholder="Email address" />
-                  <Input type="phone" placeholder="Phone number" />
+                  <Input type="text" name="firstname" placeholder="Firstname" required />
+                  <Input type="text" name="lastname" placeholder="Lastname" required />
+                  <Input type="email" name="email" placeholder="Email address" required />
+                  <Input type="tel" name="phone" placeholder="Phone number" />
                 </div>
                 {/* select */}
-                <Select>
+                <Select value={projectType} onValueChange={setProjectType}>
                   <SelectTrigger className="w-full">
                     <SelectValue placeholder="Select project type"></SelectValue>
                   </SelectTrigger>
                   <SelectContent>
                     <SelectGroup>
                       <SelectLabel>Select project type</SelectLabel>
-                      <SelectItem value="est">FullStack development</SelectItem>
-                      <SelectItem value="cst">Backend development</SelectItem>
-                      <SelectItem value="mst">Frontend development</SelectItem>
+                      <SelectItem value="FullStack development">FullStack development</SelectItem>
+                      <SelectItem value="Backend development">Backend development</SelectItem>
+                      <SelectItem value="Frontend development">Frontend development</SelectItem>
+                      <SelectItem value="Other">Other</SelectItem>
                     </SelectGroup>
                   </SelectContent>
                 </Select>
                 {/* text-area */}
                 <Textarea
+                  name="message"
                   className="h-[200px]"
                   placeholder="Type your message here"
+                  required
                 />
+                
+                {/* Status Message */}
+                {result && (
+                  <p className={`text-sm ${result.includes("success") ? "text-accent" : "text-red-500"}`}>
+                    {result}
+                  </p>
+                )}
+
                 {/* Button */}
-                <Button size="md" className="max-w-40">
-                  Send message
+                <Button size="md" className="max-w-40" type="submit" disabled={result === "Sending...."}>
+                  {result === "Sending...." ? "Sending..." : "Send message"}
                 </Button>
               </form>
             </div>

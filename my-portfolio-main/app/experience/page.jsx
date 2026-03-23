@@ -7,18 +7,57 @@ import PageTransition from "@/components/PageTransition"; // Import your PageTra
 
 const experienceData = [
   {
-    company: "Connectogen",
-    position: "Full Stack Developer",
-    duration: "August 2024 – May 2025",
+    company: "Georgia Institute of Technology",
+    position: "Head TA",
+    duration: "August 2025 – Present",
     location: "Atlanta, GA",
     description:
-      "Led the redevelopment of Emory University's mentorship and collaboration platform, enhancing scalability, responsiveness, and user experience using modern web technologies.",
+      "Manage a team of 6 Teaching Assistants for CS3803 (Design Capstone) with 400 students, coordinating grading allocations and instructional support across three distinct sections.",
     responsibilities: [
-      "Revamped core functionalities for user profiles, project management, and mentorship facilitation using React.js and Figma.",
-      "Developed an AI-powered chatbot for personalized mentor and project recommendations, increasing recommendation accuracy by 40%.",
-      "Integrated a Chatbot Framework and AI Recommendation Engine, paving the way for multi-institutional expansion.",
+      "Optimize instructional operations by developing standardized rubrics and feedback loops, ensuring high-quality, consistent assessment for complex technical assignments.",
+      "Facilitate technical mastery for students through targeted office hours and creation of supplemental learning materials.",
     ],
     logo: "/assets/Logo.png",
+  },
+  {
+    company: "Reconaut",
+    position: "Co-Founder",
+    duration: "May 2025 – Present",
+    location: "Atlanta, GA",
+    description:
+      "Co-founded a startup developing AI-powered autonomous drone systems for building inspections, geospatial analytics, and insurance risk assessment, incubated through Georgia Tech's Create-X program.",
+    responsibilities: [
+      "Architected real-time data pipelines processing over 10,000 aerial images monthly, leveraging computer vision, ML, and anomaly detection to identify structural damage with 85% accuracy.",
+      "Designed and deployed scalable full-stack prototypes using Python, React, and AWS/GCP microservices to validate technical feasibility, demonstrate product viability, and secure early-stage clients.",
+    ],
+    logo: "/assets/Logo.png",
+  },
+  {
+    company: "Connectogen",
+    position: "Software Engineering Intern",
+    duration: "Aug 2024 – Aug 2025",
+    location: "Atlanta, GA",
+    description:
+      "Built and shipped full-stack web features (React, Node.js/Express, REST APIs) that streamlined mentorship workflows for over 500 active users across Emory University.",
+    responsibilities: [
+      "Boosted backend performance via query optimization, Redis caching, and CI/CD automation (GitHub Actions, Docker), cutting API latency by 60% and deployment-related errors by 40%.",
+      "Engineered an AI-driven recommendation engine using collaborative filtering to intelligently pair students with researchers, achieving 70% faster match turnaround.",
+    ],
+    logo: "/assets/Logo.png",
+  },
+  {
+    company: "HomeSmart",
+    position: "Data Analyst & Real Estate Agent",
+    duration: "Jan 2023 – Present",
+    location: "Atlanta, GA",
+    description:
+      "Built predictive pricing models with scikit-learn, pandas, and NumPy to forecast local housing trends, directly improving listing accuracy and client ROI.",
+    responsibilities: [
+      "Developed interactive BI dashboards in Power BI to surface market intelligence and guide data-driven investment and pricing decisions.",
+      "Managed the full client lifecycle using CRM systems, MLS databases, and targeted digital marketing, improving lead conversion and long-term retention.",
+      "Negotiated and closed transactions including complex contract and compliance documentation, consistently meeting client financial objectives.",
+    ],
+    logo: "/assets/House.png",
   },
   {
     company: "Dreamz Houz",
@@ -35,16 +74,15 @@ const experienceData = [
     logo: "/assets/House.png",
   },
   {
-    company: "American BoA",
+    company: "American BOA",
     position: "Mechanical Engineering Intern",
-    duration: "May 2021 – May 2022",
-    location: "Sugar Hill, GA",
+    duration: "May 2022 – Jan 2023",
+    location: "Cumming, GA",
     description:
-      "Assisted in the design, analysis, and optimization of mechanical components, improving efficiency and reliability in manufacturing processes.",
+      "Designed and optimized flexible metal connector components in SolidWorks and AutoCAD, achieving a 12% reduction in material costs through geometry and tolerance refinements.",
     responsibilities: [
-      "Conducted thermal and structural analysis using SolidWorks and ANSYS to enhance product durability and performance.",
-      "Collaborated with the engineering team to optimize manufacturing workflows, reducing production costs by 15%.",
-      "Implemented CAD-based design modifications to improve component efficiency, leading to a 20% reduction in material waste.",
+      "Collaborated with production engineers to re-engineer manufacturing and assembly workflows, measurably increasing line throughput and reducing bottlenecks.",
+      "Applied machine learning techniques to historical production data to predict component failure rates, strengthening preventive maintenance planning and overall equipment reliability.",
     ],
     logo: "/assets/Boa.png",
   },
