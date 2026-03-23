@@ -53,7 +53,7 @@ export default function ProjectDetail({ params }) {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
             <div className="absolute bottom-0 left-0 w-full p-8 md:p-12">
-              <span className="text-accent font-mono text-xl mb-2 block">{project.num} // {project.category}</span>
+              <span className="text-accent font-mono text-xl mb-2 block">{project.num} {"//"} {project.category}</span>
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white">{project.title}</h1>
             </div>
           </motion.div>
