@@ -162,22 +162,53 @@ export const projects = [
     num: "09",
     category: "AI",
     title: "Sensi Career Intelligence",
-    description: "🚀 Empowering students and early-career professionals through AI-driven career guidance. Sensi is a comprehensive, data-driven career coaching engine designed to transform the job application process with Google Gemini and OpenAI integration.",
+    description: "Sensi is an AI-powered career intelligence platform that helps students and job seekers understand their true skill profile and measure fit against real job opportunities with high-resolution semantic analysis.",
     stack: [
-      { name: "React" },
-      { name: "Vite" },
-      { name: "Tailwind CSS" },
+      { name: "React 18" },
+      { name: "Vite 6" },
+      { name: "Tailwind CSS 3" },
       { name: "Google Gemini" },
-      { name: "OpenAI" },
+      { name: "OpenAI GPT-4" },
       { name: "Chart.js" },
       { name: "Mammoth" },
       { name: "PDF.js" }
     ],
     image: "/assets/projects/sensi.png",
-    timeframe: "March 2026 - Present",
-    achievement: "AI Career Coaching Engine",
-    live: "#",
-    github: "https://github.com/Adonalsiun/Sensi",
-    details: "Sensi is a comprehensive career coaching engine leveraging Google Gemini and OpenAI to personalize job application insights. It features a centralized career dashboard for progress monitoring, a smart application tracker for managing deadlines, and an AI-powered interview prep tool that generates personalized questions based on job descriptions. Additionally, Sensi includes a document version manager for resumes and cover letters, AI-driven skill gap analysis, and fit score visualization to help users optimize their professional profile and bridge employability gaps."
+    timeframe: "March 2026",
+    achievement: "Vibe ATL @ Georgia Tech",
+    live: "https://www.arynbht.tech/projects/09",
+    github: "https://github.com/acearthur8/Sensi",
+    details: [
+      {
+        title: "The Problem",
+        content: "Job seekers often lack an objective way to measure how their credentials align with complex role requirements. Existing tools are fragmented—resume builders don't providing scoring, and job boards lack deep semantic analysis. For students, rich academic histories are often ignored by keyword-based filters, leaving their true potential invisible."
+      },
+      {
+        title: "The Solution",
+        content: "Sensi leverages Large Language Models (LLMs) to perform structured skill extraction from both resumes and academic transcripts. It constructs a multi-dimensional competency profile across Technical Skills, Domain Knowledge, Soft Skills, and Academic Rigor. This profile is then visually cross-referenced against job descriptions in real-time."
+      },
+      {
+        title: "Hackathon Reflections",
+        content: "Built in under 12 hours, Sensi was an exercise in extreme prioritization. The core challenge was designing a 'radar-first' layout where a 6-axis chart remains the hero of the UI. I focused on building a 'progressive disclosure' model where advanced features—like AI-generated cover letters and specific resume edit recommendations—only unlock once a high fit score (65+) is achieved, ensuring users focus on roles where they have genuine alignment."
+      }
+    ],
+    features: [
+      {
+        title: "AI Skill Extraction",
+        description: "Deep parsing of resumes and transcripts into structured competency profiles using Gemini and OpenAI."
+      },
+      {
+        title: "Dynamic Radar Graph",
+        description: "A visual centerpiece using Chart.js that overlays user profiles against job requirements for instant alignment feedback."
+      },
+      {
+        title: "Chrome Extension",
+        description: "Real-time fit scoring directly over LinkedIn, Indeed, and Handshake job postings using Chrome Storage and content scripts."
+      },
+      {
+        title: "Progressive Toolkit",
+        description: "Automatic generation of personalized cover letters and resume-edit suggestions triggered by high fit scores."
+      }
+    ]
   }
 ];

@@ -65,22 +65,56 @@ export default function ProjectDetail({ params }) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="col-span-1 lg:col-span-2 space-y-8"
+              className="col-span-1 lg:col-span-2 space-y-12"
             >
-              <div>
-                <h2 className="text-2xl font-bold mb-4 border-b border-white/10 pb-2">Overview</h2>
+              {/* Overview Section */}
+              <section>
+                <h2 className="text-2xl font-bold mb-6 border-b border-white/10 pb-2 flex items-center gap-3">
+                  <span className="text-accent">01.</span> Overview
+                </h2>
                 <p className="text-white/80 leading-relaxed text-lg">
                   {project.description}
                 </p>
-              </div>
+              </section>
 
-              {project.details && (
-                <div>
-                  <h2 className="text-2xl font-bold mb-4 border-b border-white/10 pb-2">Deep Dive</h2>
+              {/* Dynamic Sections (from project.details array) */}
+              {project.details && Array.isArray(project.details) ? (
+                project.details.map((section, idx) => (
+                  <section key={idx}>
+                    <h2 className="text-2xl font-bold mb-6 border-b border-white/10 pb-2 flex items-center gap-3">
+                      <span className="text-accent">{String(idx + 2).padStart(2, '0')}.</span> {section.title}
+                    </h2>
+                    <p className="text-white/80 leading-relaxed text-lg whitespace-pre-line">
+                      {section.content}
+                    </p>
+                  </section>
+                ))
+              ) : project.details && (
+                <section>
+                  <h2 className="text-2xl font-bold mb-6 border-b border-white/10 pb-2 flex items-center gap-3">
+                    <span className="text-accent">02.</span> Deep Dive
+                  </h2>
                   <p className="text-white/80 leading-relaxed text-lg whitespace-pre-line">
                     {project.details}
                   </p>
-                </div>
+                </section>
+              )}
+
+              {/* Features Subsection (if provided) */}
+              {project.features && (
+                <section>
+                  <h2 className="text-2xl font-bold mb-6 border-b border-white/10 pb-2 flex items-center gap-3">
+                    <span className="text-accent">{String((Array.isArray(project.details) ? project.details.length : 1) + 2).padStart(2, '0')}.</span> Key Features
+                  </h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {project.features.map((feature, idx) => (
+                      <div key={idx} className="bg-white/5 border border-white/10 p-5 rounded-xl hover:border-accent/40 transition-colors">
+                        <h4 className="text-accent font-semibold mb-2">{feature.title}</h4>
+                        <p className="text-white/70 text-sm">{feature.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                </section>
               )}
             </motion.div>
 
