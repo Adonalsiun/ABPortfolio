@@ -177,7 +177,7 @@ export const projects = [
     timeframe: "March 2026",
     achievement: "Vibe ATL @ Georgia Tech",
     live: "https://www.arynbht.tech/projects/09",
-    github: "https://github.com/acearthur8/Sensi",
+    github: "https://github.com/Adonalsiun/Sensi",
     details: [
       {
         title: "The Problem",
