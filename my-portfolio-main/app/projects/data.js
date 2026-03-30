@@ -157,5 +157,27 @@ export const projects = [
     live: "https://www.arynbht.tech/",
     github: "https://github.com/Adonalsiun/ABPortfolio",
     details: "This portfolio is a dynamic reflection of my journey as a computer science student and developer. Built meticulously with Next.js and React, it prioritizes top-tier performance, SEO optimization, and an exceptionally smooth user experience enriched by Framer Motion animations. The design system leverages Tailwind CSS to create a modern, dark-themed aesthetic that feels both premium and uniquely personal. By centralizing my varied work—spanning from embedded C development to deep learning models—into a single, highly interactive application, this platform serves as both a resume and a technical sandbox where I continually test and deploy new web technologies."
+  },
+  {
+    num: "09",
+    category: "AI",
+    title: "Sensi Career Intelligence",
+    description: "🚀 Empowering students and early-career professionals through AI-driven career guidance. Sensi is a comprehensive, data-driven career coaching engine designed to transform the job application process with Google Gemini and OpenAI integration.",
+    stack: [
+      { name: "React" },
+      { name: "Vite" },
+      { name: "Tailwind CSS" },
+      { name: "Google Gemini" },
+      { name: "OpenAI" },
+      { name: "Chart.js" },
+      { name: "Mammoth" },
+      { name: "PDF.js" }
+    ],
+    image: "/assets/projects/sensi.png",
+    timeframe: "March 2026 - Present",
+    achievement: "AI Career Coaching Engine",
+    live: "#",
+    github: "https://github.com/Adonalsiun/Sensi",
+    details: "Sensi is a comprehensive career coaching engine leveraging Google Gemini and OpenAI to personalize job application insights. It features a centralized career dashboard for progress monitoring, a smart application tracker for managing deadlines, and an AI-powered interview prep tool that generates personalized questions based on job descriptions. Additionally, Sensi includes a document version manager for resumes and cover letters, AI-driven skill gap analysis, and fit score visualization to help users optimize their professional profile and bridge employability gaps."
   }
 ];
