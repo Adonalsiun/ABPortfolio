@@ -15,6 +15,26 @@ import {
   SiTailwindcss,
   SiCplusplus,
   SiExpress,
+  SiCsharp,
+  SiPytorch,
+  SiTensorflow,
+  SiScikitlearn,
+  SiFastapi,
+  SiApachekafka,
+  SiDotnet,
+  SiNumpy,
+  SiPandas,
+  SiMicrosoftsqlserver,
+  SiPostgresql,
+  SiMongodb,
+  SiRedis,
+  SiGit,
+  SiDocker,
+  SiJupyter,
+  SiGithubactions,
+  SiAmazonaws,
+  SiMicrosoftazure,
+  SiGooglecloud,
 } from "react-icons/si";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
@@ -77,12 +97,12 @@ const publications = [
     fieldValue: "https://github.com/Adonalsiun",
   },
   {
-    fieldName: "Leetcode",
-    fieldValue: "https://leetcode.com/arynbht/",
+    fieldName: "X (Twitter)",
+    fieldValue: "https://x.com/adonalsiun",
   },
   {
     fieldName: "LinkedIn",
-    fieldValue: "www.linkedin.com/in/arynbht/",
+    fieldValue: "https://www.linkedin.com/in/arynbht/",
   },
 ];
 
@@ -119,49 +139,14 @@ const certificates = {
   description: "Professional certifications bridging the gap between mechanical engineering and computer science.",
   items: [
     {
-      name: "AWS Certified Cloud Practitioner",
-      issuer: "Amazon Web Services",
-      date: "2025",
-    },
-    {
-      name: "Certified SolidWorks Professional (CSWP)",
-      issuer: "Dassault Systèmes",
-      date: "2023",
-    },
-    {
-      name: "Machine Learning Specialization",
-      issuer: "DeepLearning.AI / Stanford",
-      date: "2024",
-    },
-    {
       name: "Autodesk Certified Professional: AutoCAD",
       issuer: "Autodesk",
       date: "2022",
     },
     {
-      name: "ROS 2 Developer (Robot Operating System)",
-      issuer: "The Construct",
-      date: "2024",
-    },
-    {
-      name: "TensorFlow Developer Certificate",
-      issuer: "Google",
-      date: "2024",
-    },
-    {
-      name: "Google Data Analytics Professional Certificate",
-      issuer: "Google / Coursera",
+      name: "Certified SolidWorks Professional (CSWP)",
+      issuer: "Dassault Systèmes",
       date: "2023",
-    },
-    {
-      name: "Certified Systems Engineering Professional (CSEP)",
-      issuer: "INCOSE",
-      date: "2025",
-    },
-    {
-      name: "CompTIA Security+",
-      issuer: "CompTIA",
-      date: "2024",
     },
     {
       name: "Certified ScrumMaster (CSM)",
@@ -176,54 +161,43 @@ const skills = {
   title: "My Skills",
   description: "Here are some of the technologies I've worked with.",
   skillList: [
-    {
-      icon: <SiCplusplus />,
-      name: "C++",
-    },
-    {
-      icon: <FaJava />,
-      name: "Java",
-    },
-    {
-      icon: <FaPython />,
-      name: "Python",
-    },
-    {
-      icon: <FaJs />,
-      name: "Javascript",
-    },
-    {
-      icon: <FaHtml5 />,
-      name: "Html 5",
-    },
-    {
-      icon: <FaCss3 />,
-      name: "CSS 3",
-    },
-    {
-      icon: <FaReact />,
-      name: "React.js",
-    },
-    {
-      icon: <SiTypescript />,
-      name: "TypeScript",
-    },
-    {
-      icon: <SiNextdotjs />,
-      name: "Next.js",
-    },
-    {
-      icon: <FaNodeJs />,
-      name: "Node.js",
-    },
-    {
-      icon: <SiTailwindcss />,
-      name: "Tailwind css",
-    },
-    {
-      icon: <SiExpress />,
-      name: "Express.js",
-    },
+    // Programming Languages
+    { icon: <SiCplusplus />, name: "C++" },
+    { icon: <SiCsharp />, name: "C#" },
+    { icon: <FaJava />, name: "Java" },
+    { icon: <FaPython />, name: "Python" },
+    { icon: <FaJs />, name: "JavaScript" },
+    { icon: <SiTypescript />, name: "TypeScript" },
+    // Frameworks & Libraries
+    { icon: <SiPytorch />, name: "PyTorch" },
+    { icon: <SiTensorflow />, name: "TensorFlow" },
+    { icon: <SiScikitlearn />, name: "scikit-learn" },
+    { icon: <SiFastapi />, name: "FastAPI" },
+    { icon: <FaReact />, name: "React" },
+    { icon: <SiNextdotjs />, name: "Next.js" },
+    { icon: <FaNodeJs />, name: "Node.js" },
+    { icon: <SiExpress />, name: "Express.js" },
+    { icon: <SiApachekafka />, name: "Apache Kafka" },
+    { icon: <SiDotnet />, name: ".NET" },
+    { icon: <SiNumpy />, name: "NumPy" },
+    { icon: <SiPandas />, name: "Pandas" },
+    // Databases & Tools
+    { icon: <SiMicrosoftsqlserver />, name: "SQL Server" },
+    { icon: <SiPostgresql />, name: "PostgreSQL" },
+    { icon: <SiMongodb />, name: "MongoDB" },
+    { icon: <SiRedis />, name: "Redis" },
+    { icon: <SiGit />, name: "Git" },
+    { icon: <SiDocker />, name: "Docker" },
+    { icon: <SiJupyter />, name: "Jupyter" },
+    { icon: <SiGithubactions />, name: "GitHub Actions" },
+    // Cloud
+    { icon: <SiAmazonaws />, name: "AWS" },
+    { icon: <SiMicrosoftazure />, name: "Azure" },
+    { icon: <SiGooglecloud />, name: "GCP" },
+    // Web
+    { icon: <FaHtml5 />, name: "HTML 5" },
+    { icon: <FaCss3 />, name: "CSS 3" },
+    { icon: <SiTailwindcss />, name: "Tailwind CSS" },
   ],
 };
 
@@ -434,10 +408,10 @@ const About = () => {
                             {item.fieldName}
                           </span>
                           <a
-                            href={`https://${item.fieldValue}`}
+                            href={item.fieldValue}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-white hover:text-accent transition-colors"
+                            className="text-white hover:text-accent transition-colors truncate w-full"
                           >
                             {item.fieldValue}
                           </a>

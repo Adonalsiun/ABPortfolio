@@ -8,7 +8,7 @@ import PageTransition from "@/components/PageTransition"; // Import your PageTra
 const experienceData = [
   {
     company: "Georgia Institute of Technology",
-    position: "Head TA",
+    position: "Head Teaching Assistant",
     duration: "August 2025 – Present",
     location: "Atlanta, GA",
     description:
@@ -17,7 +17,7 @@ const experienceData = [
       "Optimize instructional operations by developing standardized rubrics and feedback loops, ensuring high-quality, consistent assessment for complex technical assignments.",
       "Facilitate technical mastery for students through targeted office hours and creation of supplemental learning materials.",
     ],
-    logo: "/assets/Logo.png",
+    logo: "/assets/GT Logo.png",
   },
   {
     company: "Reconaut",
@@ -30,7 +30,21 @@ const experienceData = [
       "Architected real-time data pipelines processing over 10,000 aerial images monthly, leveraging computer vision, ML, and anomaly detection to identify structural damage with 85% accuracy.",
       "Designed and deployed scalable full-stack prototypes using Python, React, and AWS/GCP microservices to validate technical feasibility, demonstrate product viability, and secure early-stage clients.",
     ],
-    logo: "/assets/Logo.png",
+    logo: "/assets/Reconaut Logo.png",
+  },
+  {
+    company: "HomeSmart",
+    position: "Data Analyst & Real Estate Agent",
+    duration: "May 2025 – Present",
+    location: "Atlanta, GA",
+    description:
+      "Built predictive pricing models with scikit-learn, pandas, and NumPy to forecast local housing trends, directly improving listing accuracy and client ROI.",
+    responsibilities: [
+      "Developed interactive BI dashboards in Power BI to surface market intelligence and guide data-driven investment and pricing decisions.",
+      "Managed the full client lifecycle using CRM systems, MLS databases, and targeted digital marketing, improving lead conversion and long-term retention.",
+      "Negotiated and closed transactions including complex contract and compliance documentation, consistently meeting client financial objectives.",
+    ],
+    logo: "/assets/Homesmart Logo.png",
   },
   {
     company: "Connectogen",
@@ -46,18 +60,17 @@ const experienceData = [
     logo: "/assets/Logo.png",
   },
   {
-    company: "HomeSmart",
-    position: "Data Analyst & Real Estate Agent",
-    duration: "Jan 2023 – Present",
+    company: "Georgia Institute of Technology",
+    position: "Research Assistant",
+    duration: "Jan 2024 – July 2024",
     location: "Atlanta, GA",
     description:
-      "Built predictive pricing models with scikit-learn, pandas, and NumPy to forecast local housing trends, directly improving listing accuracy and client ROI.",
+      "Implemented multivariate Kalman Filter in C for state estimation in GTXR flight computer, integrating a complementary filter for acceleration and angular velocity resulting in decreased estimation errors.",
     responsibilities: [
-      "Developed interactive BI dashboards in Power BI to surface market intelligence and guide data-driven investment and pricing decisions.",
-      "Managed the full client lifecycle using CRM systems, MLS databases, and targeted digital marketing, improving lead conversion and long-term retention.",
-      "Negotiated and closed transactions including complex contract and compliance documentation, consistently meeting client financial objectives.",
+      "Created Java matrix operations library to enhance understanding of Kalman Filter mathematics, with data handling in both Euler angle and quaternion formats.",
+      "Validated sensor fusion algorithms through rigorous simulation in MATLAB and Java prior to final deployment in the embedded C environment.",
     ],
-    logo: "/assets/House.png",
+    logo: "/assets/GT Logo.png",
   },
   {
     company: "Dreamz Houz",

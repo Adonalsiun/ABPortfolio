@@ -1,6 +1,6 @@
 import { Icon } from "lucide-react";
 import Link from "next/link";
-import { FaGithub, FaLinkedin, FaYoutube, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const socials = [
   {
@@ -12,12 +12,8 @@ const socials = [
     path: "https://www.linkedin.com/in/arynbht/",
   },
   {
-    Icon: <FaYoutube />,
-    path: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-  },
-  {
     Icon: <FaTwitter />,
-    path: "https://x.com/?lang=en",
+    path: "https://x.com/adonalsiun",
   },
 ];
 
